@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capture GIF</title>
+    <style>
+        .control-group {
+            display: flex;
+            align-items: center;
+        }
+        #screenshotCount {
+            width: 50px;
+            text-align: center;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="control-group">
+        <button id="decrease">-</button>
+        <input type="number" id="screenshotCount" value="7" min="1">
+        <button id="increase">+</button>
+    </div>
+    <br>
+    <button id="captureButton">Capture GIF</button>
+    <script src="popup.js"></script>
+</body>
+</html>

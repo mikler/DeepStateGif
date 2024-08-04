@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Screenshot to GIF",
+  "version": "1.0",
+  "description": "Takes screenshots and combines them into a GIF.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "declarativeContent"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+ "content_scripts": [
+    {
+      "matches": ["https://deepstatemap.live/*"],
+      "js": ["libs/gif.js", "libs/gif.worker.js","content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["libs/gif.js", "libs/gif.worker.js"],
+      "matches": ["https://deepstatemap.live/*", "chrome-extension://*/*"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
